@@ -1,0 +1,17 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const jobTitles = document.querySelectorAll(".job-title");
+
+    jobTitles.forEach(title => {
+        title.addEventListener("click", function() {
+            const detailsDiv = this.nextElementSibling.nextElementSibling;
+            const detailsText = this.getAttribute("data-details");
+
+            if (detailsDiv.style.display === "block") {
+                detailsDiv.style.display = "none"; // Hide details if already shown
+            } else {
+                detailsDiv.textContent = detailsText; // Update details text
+                detailsDiv.style.display = "block"; // Show details
+            }
+        });
+    });
+});
